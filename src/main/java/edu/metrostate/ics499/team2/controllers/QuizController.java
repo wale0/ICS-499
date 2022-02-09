@@ -11,29 +11,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.metrostate.ics499.team2.model.Quize;
-import edu.metrostate.ics499.team2.repositories.QuizeRepository;
-
-
+import edu.metrostate.ics499.team2.model.Quiz;
+import edu.metrostate.ics499.team2.repositories.QuizRepository;
 
 @RestController
-@RequestMapping("/quize")
-public class QuizeController {
+@RequestMapping("/quiz")
+public class QuizController {
 	@Autowired
-	private QuizeRepository quizeRepo;
+	private QuizRepository quizRepo;
 	
 	@GetMapping(value = "/all")
-	public List<Quize> list() {
-	    return quizeRepo.findAll();
+	public List<Quiz> list() {
+	    return quizRepo.findAll();
 	}
-	@GetMapping(value = "{quizeId}")
-	public Quize getQuizeById(String id) {
-		return this.quizeRepo.findByQuizeId(id);
+	@GetMapping(value = "{quizId}")
+	public Quiz getQuizById(String id) {
+		return this.quizRepo.findByQuizId(id);
 	}
 	
 	@PostMapping("/add")
-	public Quize create(@RequestBody final Quize quize) {
-		return quizeRepo.save(quize);
+	public Quiz create(@RequestBody final Quiz quiz) {
+		return quizRepo.save(quiz);
 		
 	}
 }

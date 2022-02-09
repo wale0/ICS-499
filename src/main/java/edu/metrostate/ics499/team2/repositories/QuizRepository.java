@@ -7,14 +7,14 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import edu.metrostate.ics499.team2.model.Flashcard;
-import edu.metrostate.ics499.team2.model.Quize;
+import edu.metrostate.ics499.team2.model.Quiz;
 import edu.metrostate.ics499.team2.model.RegisteredUser;
 
 @Repository
-public interface QuizeRepository extends MongoRepository<Quize, String>{
-	Quize findByQuizeId(String id);
-	List<Quize> findByQuestion(String question);
-	List<Quize> findByCorrectAnswer(String correctAnswer);
+public interface QuizRepository extends MongoRepository<Quiz, String>{
+	Quiz findByQuizId(String id);
+	List<Quiz> findByQuestion(String question);
+	List<Quiz> findByCorrectAnswer(String correctAnswer);
 	
 }
 

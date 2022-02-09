@@ -3,22 +3,22 @@ package edu.metrostate.ics499.team2.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "quize")
-public class Quize {
+@Document(collection = "quiz")
+public class Quiz {
 	@Id
-	private String quizeId;
+	private String quizId;
 	private String createquestions;
 	private int displayscore;
 	private String options;
 	private String correctAnswers;
 	
 	
-	public Quize() {
+	public Quiz() {
 		super();
 	}
 
 
-	public Quize(String createquestions, int displayscore, String options, String correctAnswers) {
+	public Quiz(String createquestions, int displayscore, String options, String correctAnswers) {
 		super();
 		this.createquestions = createquestions;
 		this.displayscore = displayscore;
@@ -27,13 +27,13 @@ public class Quize {
 	}
 
 
-	public String getQuizeId() {
-		return quizeId;
+	public String getQuizId() {
+		return quizId;
 	}
 
 
-	public void setQuizeId(String quizeId) {
-		this.quizeId = quizeId;
+	public void setQuizId(String quizId) {
+		this.quizId = quizId;
 	}
 
 
